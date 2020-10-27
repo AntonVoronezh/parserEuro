@@ -1,0 +1,22 @@
+<div class="container">
+  <h1 class="text-primary">Актуальный курс валют</h1>
+  <div class="card-war">
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Nominal</th>
+        <th>Value</th>
+      </tr>
+      <tr *ngIf="valute && !loading">
+        <td>{{ valute.Name }}</td>
+        <td>{{ valute.Nominal }}</td>
+        <td>{{ valute.Value }}</td>
+      </tr>
+    </table>
+    <div *ngIf="loading"><h2>Loading...</h2></div>
+  </div>
+</div>
+
+<div class="data">Обновлено {{ time | date: 'h:mm:ss' }}</div>
+
+<div *ngIf="isAllSourcesError">Все источники вернули ошибку</div>
